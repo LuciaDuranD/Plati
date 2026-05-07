@@ -1,8 +1,15 @@
 import { Outlet, Link, useLocation } from "react-router";
+import { useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import logoImg from "../../imports/Create_a_minimal_202604221958.jpeg";
 
 export function Layout() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [pathname]);
+
   return (
     <div className="min-h-screen bg-white flex flex-col font-sans text-gray-900">
       <header className="sticky top-0 z-50 w-full border-b border-[#EDE7F6] bg-white">

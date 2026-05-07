@@ -13,7 +13,7 @@ export function LoanApplicationForm() {
       </div>
 
       {/* Progress Indicator */}
-      <div className="mb-12">
+      <div className="mb-12 relative">
         <div className="flex justify-between relative z-10">
           {['Datos Personales', 'Datos Financieros', 'Documentos'].map((label, i) => {
             const stepNum = i + 1;
@@ -21,22 +21,22 @@ export function LoanApplicationForm() {
             const isCurrent = step === stepNum;
             
             return (
-              <div key={i} className="flex flex-col items-center">
+              <div key={i} className="flex flex-col items-center w-1/3">
                 <div className={`h-10 w-10 rounded-full flex items-center justify-center font-bold text-sm transition-colors ${
-                  isCompleted ? 'bg-gray-900 text-white' : 
-                  isCurrent ? 'bg-gray-900 text-white border-4 border-gray-200' : 'bg-gray-100 text-gray-400'
+                  isCompleted ? 'bg-[#311B92] text-white' : 
+                  isCurrent ? 'bg-[#7C4DFF] text-white shadow-[0_0_0_4px_rgba(124,77,255,0.2)]' : 'bg-[#EDE7F6] text-[#311B92]'
                 }`}>
                   {isCompleted ? <Check className="h-5 w-5" /> : stepNum}
                 </div>
-                <span className={`mt-3 text-sm font-medium ${isCurrent || isCompleted ? 'text-gray-900' : 'text-gray-400'}`}>
+                <span className={`mt-3 text-sm font-medium ${isCurrent || isCompleted ? 'text-[#311B92]' : 'text-gray-400'}`}>
                   {label}
                 </span>
               </div>
             );
           })}
         </div>
-        <div className="absolute top-[88px] md:top-[124px] left-10 right-10 h-1 bg-gray-200 -z-0 hidden md:block">
-          <div className="h-full bg-gray-900 transition-all duration-300" style={{ width: step === 1 ? '0%' : step === 2 ? '50%' : '100%' }}></div>
+        <div className="absolute top-5 left-[16%] right-[16%] h-1 bg-[#EDE7F6] z-0 hidden md:block">
+          <div className="h-full bg-[#7C4DFF] transition-all duration-300" style={{ width: step === 1 ? '0%' : step === 2 ? '50%' : '100%' }}></div>
         </div>
       </div>
 
@@ -78,7 +78,7 @@ export function LoanApplicationForm() {
             </div>
             
             <div className="flex justify-end pt-6">
-              <button onClick={() => setStep(2)} className="px-8 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors">
+              <button onClick={() => setStep(2)} className="px-8 py-3 bg-[#311B92] text-white rounded-xl font-bold hover:bg-[#251370] transition-colors shadow-lg shadow-[#311B92]/20">
                 Siguiente paso
               </button>
             </div>
@@ -129,10 +129,10 @@ export function LoanApplicationForm() {
             </div>
             
             <div className="flex justify-between pt-6">
-              <button onClick={() => setStep(1)} className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+              <button onClick={() => setStep(1)} className="px-6 py-3 border border-[#EDE7F6] text-[#311B92] rounded-xl font-bold hover:bg-[#F8F5FF] transition-colors">
                 Atrás
               </button>
-              <button onClick={() => setStep(3)} className="px-8 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors">
+              <button onClick={() => setStep(3)} className="px-8 py-3 bg-[#311B92] text-white rounded-xl font-bold hover:bg-[#251370] transition-colors shadow-lg shadow-[#311B92]/20">
                 Siguiente paso
               </button>
             </div>
@@ -171,10 +171,10 @@ export function LoanApplicationForm() {
             </div>
             
             <div className="flex justify-between pt-6">
-              <button onClick={() => setStep(2)} className="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors">
+              <button onClick={() => setStep(2)} className="px-6 py-3 border border-[#EDE7F6] text-[#311B92] rounded-xl font-bold hover:bg-[#F8F5FF] transition-colors">
                 Atrás
               </button>
-              <Link to="/cliente/estado" className="px-8 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors text-center">
+              <Link to="/cliente/estado" className="px-8 py-3 bg-[#311B92] text-white rounded-xl font-bold hover:bg-[#251370] transition-colors shadow-lg shadow-[#311B92]/20 text-center">
                 Enviar solicitud
               </Link>
             </div>

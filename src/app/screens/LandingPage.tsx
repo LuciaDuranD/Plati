@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router";
 import { CheckCircle, Clock, ShieldCheck, TrendingUp, Users, Zap } from "lucide-react";
-import logoImg from "../../imports/Create_a_minimal_202604221958.jpeg";
+import heroImg from "../../imports/Ultra-realistic_editorial_lifestyle_photograph_for_202605061826__1_.jpeg";
 
 export function LandingPage() {
   const [amount, setAmount] = useState(2000000);
@@ -25,9 +25,9 @@ export function LandingPage() {
               Impulsa el crecimiento de tu empresa con microcréditos 100% digitales hasta $5.000.000 COP. Sin papeleos interminables, sin filas, y con aprobación en tiempo récord.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <a href="#simulador" className="px-8 py-4 bg-[#7C4DFF] text-white rounded-xl font-medium text-center hover:bg-[#651FFF] transition-colors shadow-lg shadow-[#7C4DFF]/20">
+              <Link to="/simular" className="px-8 py-4 bg-[#7C4DFF] text-white rounded-xl font-medium text-center hover:bg-[#651FFF] transition-colors shadow-lg shadow-[#7C4DFF]/20">
                 Simular crédito
-              </a>
+              </Link>
               <Link to="/registro" className="px-8 py-4 bg-[#EDE7F6] text-[#311B92] rounded-xl font-medium text-center hover:bg-[#D1C4E9] transition-colors">
                 Crear cuenta
               </Link>
@@ -51,18 +51,17 @@ export function LandingPage() {
           </div>
           
           {/* Hero Image / Illustration */}
-          <div className="flex-1 w-full relative">
-            <div className="aspect-square max-h-[500px] w-full bg-[#EDE7F6] rounded-[2rem] flex items-center justify-center border border-white shadow-xl relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#7C4DFF]/20 to-transparent mix-blend-multiply" />
-              <img src={logoImg} alt="PLATI App" className="w-48 h-48 rounded-3xl shadow-2xl z-10 border-4 border-white" />
+          <div className="flex-1 w-full relative flex justify-center md:justify-end">
+            <div className="aspect-square max-h-[500px] w-full max-w-[500px] rounded-[2rem] shadow-xl relative overflow-hidden border-4 border-white">
+              <img src={heroImg} alt="Cliente PLATI" className="w-full h-full object-cover" />
             </div>
             {/* Floating Card */}
-            <div className="absolute -bottom-6 -left-6 bg-white p-5 rounded-2xl shadow-xl border border-[#EDE7F6] hidden md:flex items-center gap-4 z-20">
+            <div className="absolute -bottom-6 -left-6 md:left-4 lg:left-12 bg-white p-5 rounded-2xl shadow-xl border border-[#EDE7F6] hidden md:flex items-center gap-4 z-20">
               <div className="h-12 w-12 bg-[#EDE7F6] rounded-full flex items-center justify-center">
                 <CheckCircle className="h-6 w-6 text-[#7C4DFF]" />
               </div>
               <div>
-                <p className="text-sm text-gray-500">Crédito aprobado</p>
+                <p className="text-sm text-gray-500">Crédito aprobado hasta</p>
                 <p className="font-bold text-[#311B92] text-lg">$5.000.000 COP</p>
               </div>
             </div>
@@ -189,7 +188,7 @@ export function LandingPage() {
                     <p className="text-[10px] text-gray-400 text-right mt-1">*Incluye intereses (2.5% m.v.) y seguro de deudores</p>
                   </div>
                   
-                  <Link to="/registro" className="flex items-center justify-center w-full py-4 bg-[#311B92] text-white rounded-xl font-bold hover:bg-[#251370] transition-colors shadow-lg shadow-[#311B92]/20">
+                  <Link to={`/simular?amount=${amount}&term=${term}`} className="flex items-center justify-center w-full py-4 bg-[#311B92] text-white rounded-xl font-bold hover:bg-[#251370] transition-colors shadow-lg shadow-[#311B92]/20">
                     Solicitar este crédito ahora
                   </Link>
                 </div>

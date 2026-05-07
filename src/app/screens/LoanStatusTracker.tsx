@@ -33,9 +33,9 @@ export function LoanStatusTracker() {
 
         <div className="relative pl-8 space-y-10">
           {/* Timeline Line */}
-          <div className="absolute left-[15px] top-4 bottom-4 w-0.5 bg-gray-200">
+          <div className="absolute left-[15px] top-4 bottom-4 w-0.5 bg-[#EDE7F6]">
             <div 
-              className="w-full bg-gray-900" 
+              className="w-full bg-[#7C4DFF]" 
               style={{ height: `${(currentStep - 1) * 33.33}%` }}
             ></div>
           </div>
@@ -50,8 +50,8 @@ export function LoanStatusTracker() {
               <div key={i} className="relative">
                 {/* Timeline Dot */}
                 <div className={`absolute -left-12 h-8 w-8 rounded-full border-4 border-white flex items-center justify-center ${
-                  isCompleted ? 'bg-gray-900' : 
-                  isCurrent ? 'bg-gray-900 ring-2 ring-gray-900 ring-offset-2' : 'bg-gray-300'
+                  isCompleted ? 'bg-[#311B92]' : 
+                  isCurrent ? 'bg-[#7C4DFF] ring-2 ring-[#7C4DFF] ring-offset-2' : 'bg-[#EDE7F6]'
                 }`}>
                   {isCompleted && <CheckCircle className="h-4 w-4 text-white" />}
                   {isCurrent && <div className="h-2 w-2 rounded-full bg-white"></div>}

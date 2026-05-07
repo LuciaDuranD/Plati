@@ -1,10 +1,19 @@
-import { useState } from "react";
-import { Link } from "react-router";
+import { useState, useEffect } from "react";
+import { Link, useSearchParams } from "react-router";
 import { Calculator, Info, ArrowRight } from "lucide-react";
 
 export function LoanSimulator() {
-  const [amount, setAmount] = useState(2000000);
-  const [term, setTerm] = useState(6);
+  const [searchParams] = useSearchParams();
+  const initialAmount = Number(searchParams.get("amount")) || 2000000;
+  const initialTerm = Number(searchParams.get("term")) || 6;
+
+  const [amount, setAmount] = useState(initialAmount);
+  const [term, setTerm] = useState(initialTerm);
+
+  // Scroll to top when the simulator screen is loaded
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, []);
   
   // Fake calculation logic for wireframe
   const interestRate = 0.025; // 2.5% monthly
