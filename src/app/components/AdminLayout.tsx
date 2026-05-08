@@ -19,7 +19,7 @@ export function AdminLayout() {
         <div className="h-20 flex items-center px-6 border-b border-white/10 relative z-10">
           <div className="flex items-center gap-3">
             <img src={logoImg} alt="PLATI Logo" className="h-8 w-8 rounded-md object-cover border border-white/20" />
-            <span className="text-xl font-black tracking-tight text-white">PLATI Admin</span>
+            <span className="text-xl font-black tracking-tight text-white" translate="no">PLATI Admin</span>
           </div>
         </div>
         

@@ -33,7 +33,7 @@ export function Login() {
             />
           </div>
 
-          <Link to="/cliente" className="block w-full py-4 mt-8 bg-[#7C4DFF] text-white rounded-xl font-bold text-center hover:bg-[#651FFF] transition-colors shadow-lg shadow-[#7C4DFF]/20">
+          <Link to="/cliente" className="block w-full py-4 mt-8 bg-[#F5A623] text-white rounded-xl font-bold text-center hover:bg-[#E09612] transition-colors shadow-lg shadow-[#F5A623]/20">
             Ingresar
           </Link>
 

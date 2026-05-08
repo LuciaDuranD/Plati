@@ -10,6 +10,8 @@ import { PaymentHistory } from "./screens/PaymentHistory";
 import { AdminDashboard } from "./screens/AdminDashboard";
 import { LoanRequestManagement } from "./screens/LoanRequestManagement";
 import { UserManagement } from "./screens/UserManagement";
+import { PaymentScreen } from "./screens/PaymentScreen";
+import { PublicPaymentMethods } from "./screens/PublicPaymentMethods";
 import { Layout } from "./components/Layout";
 import { AdminLayout } from "./components/AdminLayout";
 import { ClientLayout } from "./components/ClientLayout";
@@ -23,6 +25,7 @@ export const router = createBrowserRouter([
       { path: "simular", Component: LoanSimulator },
       { path: "registro", Component: UserRegistration },
       { path: "ingresar", Component: Login },
+      { path: "medios-de-pago", Component: PublicPaymentMethods },
     ],
   },
   {
@@ -33,6 +36,7 @@ export const router = createBrowserRouter([
       { path: "solicitar", Component: LoanApplicationForm },
       { path: "estado", Component: LoanStatusTracker },
       { path: "historial", Component: PaymentHistory },
+      { path: "pagos", Component: PaymentScreen },
     ],
   },
   {

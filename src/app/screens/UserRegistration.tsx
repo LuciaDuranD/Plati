@@ -16,7 +16,7 @@ export function UserRegistration() {
           <span>Registro básico</span>
         </div>
         <div className="h-2 w-full bg-[#EDE7F6] rounded-full overflow-hidden">
-          <div className="h-full bg-[#7C4DFF] w-1/3"></div>
+          <div className="h-full bg-[#F5A623] w-1/3"></div>
         </div>
       </div>
 
@@ -87,7 +87,7 @@ export function UserRegistration() {
             </label>
           </div>
 
-          <Link to="/cliente/solicitar" className="block w-full py-4 mt-6 bg-[#311B92] text-white rounded-xl font-bold text-center hover:bg-[#251370] transition-colors shadow-lg shadow-[#311B92]/20">
+          <Link to="/cliente/solicitar" className="block w-full py-4 mt-6 bg-[#F5A623] text-white rounded-xl font-bold text-center hover:bg-[#E09612] transition-colors shadow-lg shadow-[#F5A623]/20">
             Crear cuenta
           </Link>
         </form>

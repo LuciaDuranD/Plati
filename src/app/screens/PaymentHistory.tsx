@@ -1,4 +1,5 @@
 import { Download, Filter, Search } from "lucide-react";
+import { Link } from "react-router";
 
 export function PaymentHistory() {
   const payments = [
@@ -81,7 +82,7 @@ export function PaymentHistory() {
                   <td className="px-6 py-4 text-center">
                     <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${
                       payment.status === 'Pagado' ? 'bg-gray-100 text-gray-700 border-gray-300' :
-                      payment.status === 'Pendiente' ? 'bg-gray-200 text-gray-900 border-gray-400 font-bold' :
+                      payment.status === 'Pendiente' ? 'bg-[#FFF4E5] text-[#F5A623] border-[#F5A623]/30 font-bold' :
                       payment.status === 'Vencido' ? 'bg-gray-800 text-white border-gray-900' :
                       'bg-gray-50 text-gray-500 border-gray-200'
                     }`}>
@@ -90,9 +91,9 @@ export function PaymentHistory() {
                   </td>
                   <td className="px-6 py-4 text-right">
                     {payment.status === 'Pendiente' ? (
-                      <button className="text-sm font-medium bg-gray-900 text-white px-3 py-1.5 rounded hover:bg-gray-800">
+                      <Link to="/cliente/pagos" className="inline-block text-sm font-medium bg-[#F5A623] text-white px-3 py-1.5 rounded hover:bg-[#E09612] text-center shadow-sm shadow-[#F5A623]/20">
                         Pagar
-                      </button>
+                      </Link>
                     ) : (
                       <button className="text-sm font-medium text-gray-500 hover:text-gray-900">
                         Comprobante

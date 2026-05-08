@@ -33,8 +33,8 @@ export function UserManagement() {
               Estado
             </button>
           </div>
-          <button className="flex items-center gap-2 px-4 py-2 bg-gray-900 text-white rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors">
-            <UserIcon className="h-4 w-4" />
+          <button className="flex items-center gap-2 px-4 py-2 bg-[#F5A623] text-white rounded-lg text-sm font-bold hover:bg-[#E09612] transition-colors shadow-sm shadow-[#F5A623]/20">
+            <UserIcon className="h-4 w-4" strokeWidth={2.5} />
             Nuevo Usuario
           </button>
         </div>
@@ -69,7 +69,7 @@ export function UserManagement() {
                   <td className="px-6 py-4 text-sm font-mono text-gray-500">{user.id}</td>
                   <td className="px-6 py-4 text-center">
                     <span className={`inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium border ${
-                      user.status === 'Activo' ? 'bg-gray-100 text-gray-600 border-gray-300' :
+                      user.status === 'Activo' ? 'bg-[#FFF4E5] text-[#F5A623] border-[#F5A623]/30 font-bold' :
                       user.status === 'En mora' ? 'bg-gray-800 text-white border-gray-900' :
                       user.status === 'Inactivo' ? 'bg-gray-50 text-gray-400 border-gray-200' :
                       'bg-white text-gray-500 border-gray-300 line-through'

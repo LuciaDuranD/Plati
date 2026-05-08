@@ -36,15 +36,15 @@ export function LandingPage() {
             {/* Trust Badges */}
             <div className="pt-6 flex flex-wrap gap-6 items-center text-sm font-medium text-gray-500">
               <div className="flex items-center gap-2">
-                <Zap className="h-5 w-5 text-[#7C4DFF]" />
+                <Zap className="h-5 w-5 text-[#F5A623]" />
                 <span>Aprobación rápida</span>
               </div>
               <div className="flex items-center gap-2">
-                <ShieldCheck className="h-5 w-5 text-[#7C4DFF]" />
+                <ShieldCheck className="h-5 w-5 text-[#F5A623]" />
                 <span>100% Seguro</span>
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="h-5 w-5 text-[#7C4DFF]" />
+                <Clock className="h-5 w-5 text-[#F5A623]" />
                 <span>Sin filas</span>
               </div>
             </div>
@@ -57,11 +57,11 @@ export function LandingPage() {
             </div>
             {/* Floating Card */}
             <div className="absolute -bottom-6 -left-6 md:left-4 lg:left-12 bg-white p-5 rounded-2xl shadow-xl border border-[#EDE7F6] hidden md:flex items-center gap-4 z-20">
-              <div className="h-12 w-12 bg-[#EDE7F6] rounded-full flex items-center justify-center">
-                <CheckCircle className="h-6 w-6 text-[#7C4DFF]" />
+              <div className="h-12 w-12 bg-[#FFF4E5] rounded-full flex items-center justify-center">
+                <CheckCircle className="h-6 w-6 text-[#F5A623]" />
               </div>
               <div>
-                <p className="text-sm text-gray-500">Crédito aprobado hasta</p>
+                <p className="text-sm text-gray-500">Créditos aprobados hasta por</p>
                 <p className="font-bold text-[#311B92] text-lg">$5.000.000 COP</p>
               </div>
             </div>
@@ -93,8 +93,8 @@ export function LandingPage() {
               { icon: TrendingUp, title: "Tasas Competitivas", desc: "Evaluamos tu negocio de forma integral para ofrecerte las mejores condiciones." },
               { icon: Users, title: "Atención Personalizada", desc: "Un equipo de expertos dispuesto a ayudarte en cada paso de tu crecimiento." }
             ].map((benefit, i) => (
-              <div key={i} className="p-8 rounded-[2rem] bg-white border border-[#EDE7F6] hover:border-[#7C4DFF] hover:shadow-xl hover:shadow-[#7C4DFF]/10 transition-all duration-300 group">
-                <div className="h-14 w-14 bg-[#EDE7F6] rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#7C4DFF] transition-colors">
+              <div key={i} className="p-8 rounded-[2rem] bg-white border border-[#EDE7F6] hover:border-[#F5A623] hover:shadow-xl hover:shadow-[#F5A623]/10 transition-all duration-300 group">
+                <div className="h-14 w-14 bg-[#EDE7F6] rounded-2xl flex items-center justify-center mb-6 group-hover:bg-[#F5A623] transition-colors">
                   <benefit.icon className="h-7 w-7 text-[#7C4DFF] group-hover:text-white transition-colors" />
                 </div>
                 <h3 className="text-xl font-bold text-[#311B92] mb-3">{benefit.title}</h3>
@@ -121,7 +121,7 @@ export function LandingPage() {
                 <ul className="space-y-5">
                   {['Desembolso en 24 horas', 'Plazos flexibles hasta 12 meses', 'Sin cargos ni letras pequeñas'].map((item, i) => (
                     <li key={i} className="flex items-center gap-4 text-[#EDE7F6] font-medium">
-                      <div className="h-6 w-6 rounded-full bg-[#7C4DFF] flex items-center justify-center">
+                      <div className="h-6 w-6 rounded-full bg-[#F5A623] flex items-center justify-center">
                         <CheckCircle className="h-4 w-4 text-white" />
                       </div>
                       {item}
@@ -150,7 +150,10 @@ export function LandingPage() {
                         step="100000"
                         value={amount}
                         onChange={(e) => setAmount(Number(e.target.value))}
-                        className="w-full h-2 bg-[#EDE7F6] rounded-lg appearance-none cursor-pointer accent-[#7C4DFF]"
+                        className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-[#F5A623]"
+                        style={{
+                          background: `linear-gradient(to right, #F5A623 ${((amount - 500000) / 4500000) * 100}%, #EDE7F6 ${((amount - 500000) / 4500000) * 100}%)`
+                        }}
                       />
                       <div className="flex justify-between mt-3 text-xs font-bold text-gray-400">
                         <span>$500.000</span>
@@ -169,7 +172,7 @@ export function LandingPage() {
                           className={`h-12 rounded-xl border-2 flex items-center justify-center font-bold transition-all ${
                             term === t 
                               ? 'border-[#7C4DFF] bg-[#7C4DFF]/10 text-[#7C4DFF]' 
-                              : 'border-[#EDE7F6] text-gray-500 hover:border-[#7C4DFF]/50 hover:text-[#311B92]'
+                              : 'border-[#EDE7F6] text-gray-500 hover:border-[#F5A623] hover:text-[#F5A623] hover:bg-[#FFF4E5]'
                           }`}
                         >
                           {t} meses
@@ -188,7 +191,7 @@ export function LandingPage() {
                     <p className="text-[10px] text-gray-400 text-right mt-1">*Incluye intereses (2.5% m.v.) y seguro de deudores</p>
                   </div>
                   
-                  <Link to={`/simular?amount=${amount}&term=${term}`} className="flex items-center justify-center w-full py-4 bg-[#311B92] text-white rounded-xl font-bold hover:bg-[#251370] transition-colors shadow-lg shadow-[#311B92]/20">
+                  <Link to={`/simular?amount=${amount}&term=${term}`} className="flex items-center justify-center w-full py-4 bg-[#F5A623] text-white rounded-xl font-bold hover:bg-[#E09612] transition-colors shadow-lg shadow-[#F5A623]/20">
                     Solicitar este crédito ahora
                   </Link>
                 </div>

@@ -107,8 +107,8 @@ export function AdminDashboard() {
       <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
         <div className="p-6 border-b border-gray-200 flex justify-between items-center">
           <h3 className="text-lg font-bold text-gray-900">Solicitudes Recientes</h3>
-          <Link to="/admin/solicitudes" className="text-sm font-medium text-gray-900 hover:underline flex items-center gap-1">
-            Ver todas <ArrowRight className="h-4 w-4" />
+          <Link to="/admin/solicitudes" className="text-sm font-medium text-[#F5A623] hover:underline flex items-center gap-1">
+            Ver todas <ArrowRight className="h-4 w-4" strokeWidth={2.5} />
           </Link>
         </div>
         <div className="overflow-x-auto">
@@ -124,7 +124,7 @@ export function AdminDashboard() {
             <tbody className="divide-y divide-gray-100">
               {[
                 { name: "María Gómez", amount: "$ 8,000,000", date: "Hace 2 horas", status: "En revisión", color: "bg-gray-200 text-gray-800" },
-                { name: "Carlos Ruiz", amount: "$ 3,500,000", date: "Hace 5 horas", status: "Nueva", color: "bg-gray-800 text-white" },
+                { name: "Carlos Ruiz", amount: "$ 3,500,000", date: "Hace 5 horas", status: "Nueva", color: "bg-[#FFF4E5] text-[#F5A623] border border-[#F5A623]/30 font-bold" },
                 { name: "Ana Torres", amount: "$ 12,000,000", date: "Ayer", status: "Aprobada", color: "bg-gray-100 text-gray-600 border border-gray-300" },
               ].map((row, i) => (
                 <tr key={i} className="hover:bg-gray-50">

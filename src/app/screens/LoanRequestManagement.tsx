@@ -75,7 +75,7 @@ export function LoanRequestManagement() {
                   </td>
                   <td className="px-6 py-4">
                     <span className={`inline-flex px-2.5 py-0.5 rounded-full text-xs font-medium border ${
-                      req.status === 'Nueva' ? 'bg-gray-800 text-white border-gray-900' :
+                      req.status === 'Nueva' ? 'bg-[#FFF4E5] text-[#F5A623] border border-[#F5A623]/30 font-bold' :
                       req.status === 'En revisión' ? 'bg-gray-200 text-gray-900 border-gray-400' :
                       req.status === 'Aprobada' || req.status === 'Desembolsada' ? 'bg-gray-100 text-gray-600 border-gray-300' :
                       'bg-white text-gray-500 border-gray-300 line-through'
@@ -90,8 +90,8 @@ export function LoanRequestManagement() {
                       </button>
                       {(req.status === 'Nueva' || req.status === 'En revisión') && (
                         <>
-                          <button title="Aprobar" className="p-1.5 text-gray-700 hover:bg-gray-200 rounded">
-                            <Check className="h-4 w-4" />
+                          <button title="Aprobar" className="p-1.5 text-[#F5A623] hover:bg-[#FFF4E5] rounded">
+                            <Check className="h-4 w-4" strokeWidth={2.5} />
                           </button>
                           <button title="Rechazar" className="p-1.5 text-gray-400 hover:bg-gray-100 rounded">
                             <X className="h-4 w-4" />

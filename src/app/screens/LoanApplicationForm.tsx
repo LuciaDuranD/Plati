@@ -24,7 +24,7 @@ export function LoanApplicationForm() {
               <div key={i} className="flex flex-col items-center w-1/3">
                 <div className={`h-10 w-10 rounded-full flex items-center justify-center font-bold text-sm transition-colors ${
                   isCompleted ? 'bg-[#311B92] text-white' : 
-                  isCurrent ? 'bg-[#7C4DFF] text-white shadow-[0_0_0_4px_rgba(124,77,255,0.2)]' : 'bg-[#EDE7F6] text-[#311B92]'
+                  isCurrent ? 'bg-[#F5A623] text-white shadow-[0_0_0_4px_rgba(245,166,35,0.2)]' : 'bg-[#EDE7F6] text-[#311B92]'
                 }`}>
                   {isCompleted ? <Check className="h-5 w-5" /> : stepNum}
                 </div>
@@ -36,7 +36,7 @@ export function LoanApplicationForm() {
           })}
         </div>
         <div className="absolute top-5 left-[16%] right-[16%] h-1 bg-[#EDE7F6] z-0 hidden md:block">
-          <div className="h-full bg-[#7C4DFF] transition-all duration-300" style={{ width: step === 1 ? '0%' : step === 2 ? '50%' : '100%' }}></div>
+          <div className="h-full bg-[#F5A623] transition-all duration-300" style={{ width: step === 1 ? '0%' : step === 2 ? '50%' : '100%' }}></div>
         </div>
       </div>
 
@@ -145,27 +145,27 @@ export function LoanApplicationForm() {
             <p className="text-sm text-gray-600 mb-4">Sube los siguientes documentos para agilizar tu aprobación.</p>
             
             <div className="space-y-4">
-              <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 flex flex-col items-center justify-center text-center hover:border-gray-400 transition-colors cursor-pointer bg-gray-50">
-                <div className="h-10 w-10 bg-gray-200 rounded-full flex items-center justify-center mb-3">
-                  <span className="text-gray-500 text-xl">+</span>
+              <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 flex flex-col items-center justify-center text-center hover:border-[#F5A623] hover:bg-[#FFF4E5] transition-colors cursor-pointer bg-gray-50 group">
+                <div className="h-10 w-10 bg-gray-200 rounded-full flex items-center justify-center mb-3 group-hover:bg-[#F5A623] group-hover:text-white transition-colors">
+                  <span className="text-gray-500 text-xl group-hover:text-white">+</span>
                 </div>
-                <h3 className="font-medium text-gray-900">Cédula de ciudadanía</h3>
+                <h3 className="font-medium text-gray-900 group-hover:text-[#F5A623] transition-colors">Cédula de ciudadanía</h3>
                 <p className="text-xs text-gray-500 mt-1">Foto por ambas caras (JPG, PNG o PDF)</p>
               </div>
               
-              <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 flex flex-col items-center justify-center text-center hover:border-gray-400 transition-colors cursor-pointer bg-gray-50">
-                <div className="h-10 w-10 bg-gray-200 rounded-full flex items-center justify-center mb-3">
-                  <span className="text-gray-500 text-xl">+</span>
+              <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 flex flex-col items-center justify-center text-center hover:border-[#F5A623] hover:bg-[#FFF4E5] transition-colors cursor-pointer bg-gray-50 group">
+                <div className="h-10 w-10 bg-gray-200 rounded-full flex items-center justify-center mb-3 group-hover:bg-[#F5A623] group-hover:text-white transition-colors">
+                  <span className="text-gray-500 text-xl group-hover:text-white">+</span>
                 </div>
-                <h3 className="font-medium text-gray-900">Extractos bancarios (Últimos 3 meses)</h3>
+                <h3 className="font-medium text-gray-900 group-hover:text-[#F5A623] transition-colors">Extractos bancarios (Últimos 3 meses)</h3>
                 <p className="text-xs text-gray-500 mt-1">Formato PDF</p>
               </div>
               
-              <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 flex flex-col items-center justify-center text-center hover:border-gray-400 transition-colors cursor-pointer bg-gray-50">
-                <div className="h-10 w-10 bg-gray-200 rounded-full flex items-center justify-center mb-3">
-                  <span className="text-gray-500 text-xl">+</span>
+              <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 flex flex-col items-center justify-center text-center hover:border-[#F5A623] hover:bg-[#FFF4E5] transition-colors cursor-pointer bg-gray-50 group">
+                <div className="h-10 w-10 bg-gray-200 rounded-full flex items-center justify-center mb-3 group-hover:bg-[#F5A623] group-hover:text-white transition-colors">
+                  <span className="text-gray-500 text-xl group-hover:text-white">+</span>
                 </div>
-                <h3 className="font-medium text-gray-900">RUT (Opcional)</h3>
+                <h3 className="font-medium text-gray-900 group-hover:text-[#F5A623] transition-colors">RUT (Opcional)</h3>
                 <p className="text-xs text-gray-500 mt-1">Formato PDF</p>
               </div>
             </div>
@@ -174,7 +174,7 @@ export function LoanApplicationForm() {
               <button onClick={() => setStep(2)} className="px-6 py-3 border border-[#EDE7F6] text-[#311B92] rounded-xl font-bold hover:bg-[#F8F5FF] transition-colors">
                 Atrás
               </button>
-              <Link to="/cliente/estado" className="px-8 py-3 bg-[#311B92] text-white rounded-xl font-bold hover:bg-[#251370] transition-colors shadow-lg shadow-[#311B92]/20 text-center">
+              <Link to="/cliente/estado" className="px-8 py-3 bg-[#F5A623] text-white rounded-xl font-bold hover:bg-[#E09612] transition-colors shadow-lg shadow-[#F5A623]/20 text-center">
                 Enviar solicitud
               </Link>
             </div>

@@ -130,6 +130,9 @@
   --color-gray-800: #311B92; /* Active/Hover state, logos */
   --color-gray-900: #7C4DFF; /* Primary buttons, Headings, admin sidebar */
   --color-gray-950: #160B49;
+
+  /* Plati Accent Color */
+  --color-plati-accent: #F5A623;
 }
 
 @layer base {

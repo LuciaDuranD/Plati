@@ -1,0 +1,168 @@
+Design a high-fidelity fintech payment screen for "PLATI", 
+a Colombian microloan platform. Desktop 1440px wide.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESIGN TOKENS (use exactly)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Primary:     #7C4DFF  (violet — CTAs, active states)
+Deep:        #311B92  (sidebar background)
+Light:       #EDE7F6  (card backgrounds, chips)
+Pale:        #F5F3FF  (page background)
+Gold:        #FFD600  (logo dot, highlight accent)
+Success:     #16A34A  (Pagado — green)
+Warning:     #D97706  (Pendiente — amber)
+Danger:      #DC2626  (Vencido — red)
+Text dark:   #1A0060
+Text muted:  #6E5FAA
+Border:      #D1C4E9
+Font:        Plus Jakarta Sans
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+LAYOUT STRUCTURE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[SIDEBAR — 240px, background #311B92]
+Top: PLATI logo (violet circle + gold dot + white wordmark)
+Nav items with Tabler icons, white text, 48px row height:
+  • Inicio          (ti-home)
+  • Mi crédito      (ti-credit-card)
+  • Historial       (ti-history)
+  • Pagos           ← ACTIVE (ti-wallet) 
+    Active state: #7C4DFF pill background, white text, 
+    left accent bar 3px gold
+  • Perfil          (ti-user)
+Bottom: user mini-card (avatar initials + name + "Cerrar sesión")
+
+[HEADER — 64px, white, border-bottom 1px #D1C4E9]
+Left:  Breadcrumb "Pagos / Pagar cuota"
+Right: Bell icon (badge "2") + divider + avatar circle 
+       "CR" initials in #7C4DFF bg + "Carlos R." + chevron
+
+[MAIN CONTENT — background #F5F3FF, padding 32px]
+3-column grid layout:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COLUMN LEFT (flex 1.4) — PRIMARY PAYMENT AREA
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CARD 1 — "Pago de cuota" (white, radius 20px, padding 28px)
+┌─────────────────────────────────┐
+│ Row: "Cuota 5 de 12"  [PENDIENTE badge amber]
+│
+│ MONTO HERO — centered, dominant:
+│   Label small muted: "Valor a pagar"
+│   $206.000  ← 52px, weight 800, #7C4DFF
+│
+│ Divider
+│
+│ Info row (3 columns):
+│  Fecha límite    Cuotas pagas    Saldo restante
+│  15 jun 2025     4 / 12          $1.560.000
+│  (red if < 3 days away)
+│
+│ Progress bar (full width):
+│   Label "Progreso de pago"
+│   Filled 33% in #7C4DFF, bg #EDE7F6, radius pill
+│   "4 de 12 cuotas pagadas"
+└─────────────────────────────────┘
+
+CARD 2 — "Selecciona cómo pagar" (white, radius 20px)
+Title: "Método de pago" + subtitle "Elige tu forma favorita"
+
+Payment methods — 2x3 grid of method cards (each 140px wide):
+Each card: white bg, 1px border #D1C4E9, radius 12px, 
+           padding 16px, centered icon + name below
+
+When SELECTED: border 2px #7C4DFF, bg #F5F3FF, 
+               checkmark badge top-right in #7C4DFF
+
+Methods:
+┌──────────┐  ┌──────────┐  ┌──────────┐
+│  [PSE]   │  │ [Nequi]  │  │[Daviplata│
+│   PSE    │  │  Nequi   │  │Daviplata]│
+│ Bancario │  │ Digital  │  │ Digital  │
+│ •Activo  │  │ •Activo  │  │ •Activo  │
+└──────────┘  └──────────┘  └──────────┘
+┌──────────┐  ┌──────────┐  ┌──────────┐
+│[Transfer]│  │[Efecty]  │  │[Baloto]  │
+│Transferen│  │ Efecty   │  │ Baloto   │
+│  Banco   │  │ Efectivo │  │ Efectivo │
+│ •Activo  │  │ •Activo  │  │ •Activo  │
+└──────────┘  └──────────┘  └──────────┘
+
+PSE card = SELECTED state by default
+
+SECURITY STRIP (below grid, #EDE7F6 bg, radius 10px, padding 12px):
+🔒 "Tu pago se procesa de forma 100% segura"
+Row of trust badges: [SSL Seguro] [Cifrado 256-bit] [SuperFinanciera]
+Each badge: white pill, icon + small text
+
+ACTION BUTTONS (full width, stacked):
+Primary:   "Pagar $206.000 ahora →"
+           Background #7C4DFF, white text, radius 50px, 
+           height 56px, weight 700, full width
+           Left icon: ti-lock (small, white)
+
+Secondary: "Descargar comprobante"
+           Background white, border 1.5px #D1C4E9, 
+           color #7C4DFF, radius 50px, height 48px
+           Left icon: ti-download
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COLUMN RIGHT (flex 0.8) — SUMMARY + HISTORY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CARD 3 — Credit Summary (white, radius 20px)
+Header: "Resumen de tu crédito"
+
+Stats grid (2x2):
+┌─────────────┬─────────────┐
+│ Total       │ Saldo       │
+│ crédito     │ restante    │
+│ $2.000.000  │ $1.560.000  │
+│             │ ████░░░░ 78%│
+├─────────────┼─────────────┤
+│ Cuotas      │ Próxima     │
+│ pagadas     │ cuota       │
+│   4 / 12    │ 15 jul $206k│
+└─────────────┴─────────────┘
+Each stat: label small muted + value bold #1A0060
+
+CARD 4 — Historial rápido (white, radius 20px)
+Header row: "Últimos pagos" + "Ver todo →" link in #7C4DFF
+
+Table (no outer borders, just row dividers):
+Cols: Cuota / Fecha / Valor / Estado
+
+Row 1: #4 / 15 abr / $206.000 / [Pagado ✓] green
+Row 2: #3 / 15 mar / $206.000 / [Pagado ✓] green
+Row 3: #2 / 15 feb / $206.000 / [Pagado ✓] green
+Row 4: #1 / 15 ene / $206.000 / [Pagado ✓] green
+
+Row height 48px, font-size 13px, alternating bg 
+white/#F9F8FF, status badges are pill-shaped small
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+VISUAL STYLE RULES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- No hard shadows — only box-shadow: 0 2px 12px rgba(124,77,255,0.08)
+- All cards use 1px border #D1C4E9 + subtle violet shadow
+- Spacing unit: 8px base grid (8/16/24/32px)
+- Icons: Tabler Icons style (stroke, not filled)
+- Hover states: bg shifts to #EDE7F6, border to #7C4DFF
+- No gradients except optional subtle on sidebar
+- Monto hero ($206.000) must be the LARGEST text on screen
+- "Pagar ahora" button must have highest visual contrast
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+UX HIERARCHY (visual priority order)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1st → Monto $206.000 (biggest, violet, center)
+2nd → "Pagar ahora" button (full width, high contrast)
+3rd → Estado badge (Pendiente/Pagado/Vencido)
+4th → Método de pago seleccionado
+5th → Resumen + historial (supporting info)
+
+Frame size: 1440 × 900px
+Style: Minimal & Playful fintech — warm, not cold corporate
+Feeling: Simple · Intuitive · Secure · Close to the user

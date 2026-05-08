@@ -19,7 +19,7 @@ export function ClientDashboard() {
               <p className="text-gray-400 text-sm font-medium uppercase tracking-wider mb-1">Crédito Actual</p>
               <h2 className="text-4xl font-bold font-mono">$ 5,000,000</h2>
             </div>
-            <div className="px-3 py-1 bg-gray-800 text-white rounded-full text-xs font-bold uppercase tracking-wide border border-gray-700">
+            <div className="px-3 py-1 bg-[#FFF4E5] text-[#F5A623] rounded-full text-xs font-bold uppercase tracking-wide border border-[#F5A623]/20">
               Activo
             </div>
           </div>
@@ -57,9 +57,9 @@ export function ClientDashboard() {
             </p>
           </div>
           
-          <button className="w-full mt-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors flex justify-center items-center gap-2">
-            Pagar ahora <ArrowUpRight className="h-4 w-4" />
-          </button>
+          <Link to="/cliente/pagos" className="w-full mt-6 py-3 bg-[#F5A623] text-white rounded-lg font-bold hover:bg-[#E09612] transition-colors flex justify-center items-center gap-2 shadow-md shadow-[#F5A623]/20">
+            Pagar ahora <ArrowUpRight className="h-4 w-4" strokeWidth={2.5} />
+          </Link>
         </div>
       </div>
 

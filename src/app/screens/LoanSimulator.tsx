@@ -58,7 +58,10 @@ export function LoanSimulator() {
                 step="100000"
                 value={amount}
                 onChange={(e) => setAmount(Number(e.target.value))}
-                className="w-full h-2 bg-[#EDE7F6] rounded-lg appearance-none cursor-pointer accent-[#7C4DFF]"
+                className="w-full h-2 rounded-lg appearance-none cursor-pointer accent-[#F5A623]"
+                style={{
+                  background: `linear-gradient(to right, #F5A623 ${((amount - 500000) / 4500000) * 100}%, #EDE7F6 ${((amount - 500000) / 4500000) * 100}%)`
+                }}
               />
               <div className="flex justify-between mt-3 text-xs font-bold text-gray-400">
                 <span>$500.000</span>
@@ -77,7 +80,7 @@ export function LoanSimulator() {
                     className={`py-3 rounded-xl border-2 text-center font-bold transition-all ${
                       term === t 
                         ? 'border-[#7C4DFF] bg-[#7C4DFF]/10 text-[#7C4DFF]' 
-                        : 'border-[#EDE7F6] bg-white text-gray-500 hover:border-[#7C4DFF]/50 hover:text-[#311B92]'
+                        : 'border-[#EDE7F6] bg-white text-gray-500 hover:border-[#F5A623] hover:text-[#F5A623] hover:bg-[#FFF4E5]'
                     }`}
                   >
                     {t} meses
@@ -125,9 +128,9 @@ export function LoanSimulator() {
 
           <Link 
             to="/registro" 
-            className="mt-8 w-full py-4 bg-[#7C4DFF] text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#651FFF] transition-colors shadow-lg shadow-[#7C4DFF]/20"
+            className="mt-8 w-full py-4 bg-[#F5A623] text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#E09612] transition-colors shadow-lg shadow-[#F5A623]/20"
           >
-            Continuar solicitud <ArrowRight className="h-5 w-5" />
+            Continuar solicitud <ArrowRight className="h-5 w-5" strokeWidth={2.5} />
           </Link>
         </div>
       </div>

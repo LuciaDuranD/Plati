@@ -8,6 +8,7 @@ export function Layout() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
+    document.documentElement.lang = "es";
   }, [pathname]);
 
   return (
@@ -16,20 +17,21 @@ export function Layout() {
         <div className="mx-auto flex h-20 max-w-[1440px] items-center justify-between px-6 lg:px-24">
           <Link to="/" className="flex items-center gap-3">
             <img src={logoImg} alt="PLATI Logo" className="h-10 w-10 rounded-lg object-cover border border-[#EDE7F6]" />
-            <span className="text-2xl font-black text-[#311B92] tracking-tight">PLATI</span>
+            <span className="text-2xl font-black text-[#311B92] tracking-tight" translate="no">PLATI</span>
           </Link>
           
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[#311B92]">
-            <Link to="/" className="hover:text-[#7C4DFF] transition-colors">Inicio</Link>
-            <Link to="/simular" className="hover:text-[#7C4DFF] transition-colors">Simular</Link>
-            <Link to="/ingresar" className="hover:text-[#7C4DFF] transition-colors">Ingresar</Link>
+            <Link to="/" className="hover:text-[#F5A623] transition-colors">Inicio</Link>
+            <Link to="/simular" className="hover:text-[#F5A623] transition-colors">Simular</Link>
+            <Link to="/medios-de-pago" className="hover:text-[#F5A623] transition-colors">Medios de Pagos</Link>
+            <Link to="/ingresar" className="hover:text-[#F5A623] transition-colors">Ingresar</Link>
           </nav>
           
           <div className="hidden md:flex items-center gap-4">
-            <Link to="/ingresar" className="text-sm font-medium text-[#311B92] hover:text-[#7C4DFF] transition-colors">
+            <Link to="/ingresar" className="text-sm font-medium text-[#311B92] hover:text-[#F5A623] transition-colors">
               Iniciar sesión
             </Link>
-            <Link to="/registro" className="bg-[#7C4DFF] text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-[#651FFF] transition-colors shadow-sm">
+            <Link to="/registro" className="bg-[#7C4DFF] text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-[#F5A623] transition-colors shadow-sm">
               Crear cuenta
             </Link>
           </div>
@@ -49,7 +51,7 @@ export function Layout() {
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <img src={logoImg} alt="PLATI Logo" className="h-8 w-8 rounded-md object-cover grayscale opacity-60" />
-              <span className="text-xl font-black text-gray-400 tracking-tight">PLATI</span>
+              <span className="text-xl font-black text-gray-400 tracking-tight" translate="no">PLATI</span>
             </div>
             <p className="text-sm text-gray-500">Dinero rápido, seguro y confiable para tu negocio.</p>
           </div>
