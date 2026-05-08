@@ -6,7 +6,7 @@ export function ClientDashboard() {
     <div className="w-full space-y-8">
       <div>
         <h1 className="text-2xl font-bold text-gray-900">Hola, Juan Pérez</h1>
-        <p className="text-gray-600">Bienvenido a tu panel de control de PLATI.</p>
+        <p className="text-gray-600">Bienvenido a tu panel de control de <span translate="no">PLATI</span>.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

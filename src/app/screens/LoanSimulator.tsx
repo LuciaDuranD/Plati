@@ -36,18 +36,18 @@ export function LoanSimulator() {
         {/* Controls Section */}
         <div className="flex-1 p-8 md:p-10 border-b md:border-b-0 md:border-r border-[#EDE7F6]">
           <div className="flex items-center gap-4 mb-8">
-            <div className="h-12 w-12 bg-[#EDE7F6] rounded-2xl flex items-center justify-center">
-              <Calculator className="h-6 w-6 text-[#7C4DFF]" />
+            <div className="h-10 w-10 md:h-12 md:w-12 bg-[#EDE7F6] rounded-2xl flex items-center justify-center shrink-0">
+              <Calculator className="h-5 w-5 md:h-6 md:w-6 text-[#7C4DFF]" />
             </div>
-            <h2 className="text-2xl font-bold text-[#311B92]">Configura tu préstamo</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-[#311B92]">Configura tu préstamo</h2>
           </div>
 
           <div className="space-y-8">
             {/* Amount Slider */}
             <div>
-              <div className="flex justify-between mb-4">
-                <label className="font-bold text-gray-700">¿Cuánto necesitas?</label>
-                <span className="font-mono font-black text-[#7C4DFF] text-xl">
+              <div className="flex justify-between mb-4 items-center">
+                <label className="font-bold text-gray-700 text-sm md:text-base">¿Cuánto necesitas?</label>
+                <span className="font-mono font-black text-[#7C4DFF] text-lg md:text-xl">
                   $ {amount.toLocaleString('es-CO')}
                 </span>
               </div>
@@ -71,13 +71,13 @@ export function LoanSimulator() {
 
             {/* Term Selector */}
             <div>
-              <label className="font-bold text-gray-700 block mb-4">¿A qué plazo?</label>
-              <div className="grid grid-cols-3 gap-4">
+              <label className="font-bold text-gray-700 block mb-4 text-sm md:text-base">¿A qué plazo?</label>
+              <div className="grid grid-cols-3 gap-2 md:gap-4">
                 {[3, 6, 12].map((t) => (
                   <button
                     key={t}
                     onClick={() => setTerm(t)}
-                    className={`py-3 rounded-xl border-2 text-center font-bold transition-all ${
+                    className={`py-2 md:py-3 rounded-xl border-2 text-center text-sm md:text-base font-bold transition-all ${
                       term === t 
                         ? 'border-[#7C4DFF] bg-[#7C4DFF]/10 text-[#7C4DFF]' 
                         : 'border-[#EDE7F6] bg-white text-gray-500 hover:border-[#F5A623] hover:text-[#F5A623] hover:bg-[#FFF4E5]'
@@ -103,9 +103,9 @@ export function LoanSimulator() {
           <div>
             <h3 className="text-sm font-bold text-[#7C4DFF] uppercase tracking-wider mb-6">Resumen de tu crédito</h3>
             
-            <div className="bg-white p-6 rounded-2xl border border-[#EDE7F6] mb-8 text-center shadow-sm">
-              <p className="text-gray-500 text-sm font-medium mb-2">Cuota mensual estimada</p>
-              <p className="text-4xl font-black text-[#311B92] font-mono">
+            <div className="bg-white p-5 md:p-6 rounded-2xl border border-[#EDE7F6] mb-8 text-center shadow-sm">
+              <p className="text-gray-500 text-xs md:text-sm font-medium mb-1 md:mb-2">Cuota mensual estimada</p>
+              <p className="text-3xl md:text-4xl font-black text-[#311B92] font-mono">
                 $ {Math.round(monthlyPayment).toLocaleString('es-CO')}
               </p>
             </div>

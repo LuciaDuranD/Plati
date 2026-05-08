@@ -7,6 +7,7 @@ import logoBreb from "../../imports/Logo_BRE-B.jpg";
 import logoDaviplata from "../../imports/Logo_DAVIPLATA.jpg";
 import logoNequi from "../../imports/Logo_NEQUI.jpg";
 import logoPse from "../../imports/logo_PSE.png";
+import logoBaloto from "../../imports/Logo_baloto.png";
 
 export function PaymentScreen() {
   const [selectedMethod, setSelectedMethod] = useState("pse");
@@ -17,7 +18,7 @@ export function PaymentScreen() {
     { id: "daviplata", name: "Daviplata Digital", tag: "Activo", logo: logoDaviplata },
     { id: "bre-b", name: "Bre-b Transferencia", tag: "Activo", logo: logoBreb },
     { id: "efecty", name: "Efecty Efectivo", tag: "Activo", logo: logoEfecty },
-    { id: "baloto", name: "Baloto Efectivo", tag: "Activo", logo: undefined },
+    { id: "baloto", name: "Baloto Efectivo", tag: "Activo", logo: logoBaloto },
   ];
 
   const recentHistory = [
@@ -102,6 +103,8 @@ export function PaymentScreen() {
                       <img src={method.logo} alt={`Logo ${method.name}`} className="w-full h-full object-contain" />
                     ) : method.id === 'pse' ? (
                        <div className="font-black text-[#7C4DFF] text-[10px]">PSE</div>
+                    ) : method.id === 'baloto' ? (
+                       <div className="font-black text-[#1A0060] bg-[#FFD600] text-[10px] w-full h-full flex items-center justify-center rounded-sm italic tracking-tight">BALOTO</div>
                     ) : (
                       <span className="font-black text-[#311B92] text-sm uppercase">{method.name.charAt(0)}</span>
                     )}

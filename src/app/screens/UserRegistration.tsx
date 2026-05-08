@@ -7,7 +7,7 @@ export function UserRegistration() {
       <div className="text-center mb-8">
         <img src={logoImg} alt="PLATI Logo" className="h-16 w-16 mx-auto mb-6 rounded-2xl object-cover border-2 border-[#EDE7F6] shadow-sm" />
         <h1 className="text-3xl font-black text-[#311B92] mb-2">Crea tu cuenta</h1>
-        <p className="text-gray-600">Únete a PLATI y solicita tu crédito hoy.</p>
+        <p className="text-gray-600">Únete a <span translate="no">PLATI</span> y solicita tu crédito hoy.</p>
       </div>
 
       <div className="mb-8">

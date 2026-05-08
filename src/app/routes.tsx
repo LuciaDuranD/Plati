@@ -10,8 +10,13 @@ import { PaymentHistory } from "./screens/PaymentHistory";
 import { AdminDashboard } from "./screens/AdminDashboard";
 import { LoanRequestManagement } from "./screens/LoanRequestManagement";
 import { UserManagement } from "./screens/UserManagement";
+import { AdminNewUser } from "./screens/AdminNewUser";
+import { AdminUserProfile } from "./screens/AdminUserProfile";
+import { ChargedOffPortfolio } from "./screens/ChargedOffPortfolio";
+import { FinancialReports } from "./screens/FinancialReports";
 import { PaymentScreen } from "./screens/PaymentScreen";
 import { PublicPaymentMethods } from "./screens/PublicPaymentMethods";
+import { ClientProfile } from "./screens/ClientProfile";
 import { Layout } from "./components/Layout";
 import { AdminLayout } from "./components/AdminLayout";
 import { ClientLayout } from "./components/ClientLayout";
@@ -37,6 +42,7 @@ export const router = createBrowserRouter([
       { path: "estado", Component: LoanStatusTracker },
       { path: "historial", Component: PaymentHistory },
       { path: "pagos", Component: PaymentScreen },
+      { path: "perfil", Component: ClientProfile },
     ],
   },
   {
@@ -46,6 +52,10 @@ export const router = createBrowserRouter([
       { index: true, Component: AdminDashboard },
       { path: "solicitudes", Component: LoanRequestManagement },
       { path: "usuarios", Component: UserManagement },
+      { path: "usuarios/nuevo", Component: AdminNewUser },
+      { path: "usuarios/:userId", Component: AdminUserProfile },
+      { path: "cartera-castigada", Component: ChargedOffPortfolio },
+      { path: "reportes-financieros", Component: FinancialReports },
     ],
   }
 ]);

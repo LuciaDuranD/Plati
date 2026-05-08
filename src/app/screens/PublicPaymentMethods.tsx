@@ -6,6 +6,7 @@ import logoBreb from "../../imports/Logo_BRE-B.jpg";
 import logoDaviplata from "../../imports/Logo_DAVIPLATA.jpg";
 import logoNequi from "../../imports/Logo_NEQUI.jpg";
 import logoPse from "../../imports/logo_PSE.png";
+import logoBaloto from "../../imports/Logo_baloto.png";
 
 export function PublicPaymentMethods() {
   const navigate = useNavigate();
@@ -51,7 +52,7 @@ export function PublicPaymentMethods() {
       name: "Baloto", 
       tag: "Efectivo", 
       desc: "Paga en efectivo en miles de puntos de la red Vía Baloto en toda Colombia.",
-      logo: undefined
+      logo: logoBaloto
     },
   ];
 
@@ -94,6 +95,8 @@ export function PublicPaymentMethods() {
                     <img src={method.logo} alt={`Logo ${method.name}`} className="w-full h-full object-contain" />
                   ) : method.id === 'pse' ? (
                      <div className="font-black text-[#7C4DFF] text-xl tracking-tighter">PSE</div>
+                  ) : method.id === 'baloto' ? (
+                     <div className="font-black text-[#1A0060] bg-[#FFD600] text-sm w-full h-full flex items-center justify-center rounded italic tracking-tighter">BALOTO</div>
                   ) : (
                     <span className="font-black text-[#311B92] text-2xl uppercase">{method.name.charAt(0)}</span>
                   )}
@@ -126,7 +129,7 @@ export function PublicPaymentMethods() {
           <div className="relative z-10 text-center md:text-left">
             <h3 className="text-2xl font-bold text-white mb-2">Respaldo Institucional</h3>
             <p className="text-white/70 max-w-md">
-              Todas las transacciones de PLATI están vigiladas y procesadas mediante pasarelas de pago certificadas para proteger tu dinero.
+              Todas las transacciones de <span translate="no">PLATI</span> están vigiladas y procesadas mediante pasarelas de pago certificadas para proteger tu dinero.
             </p>
           </div>
 

@@ -5,6 +5,7 @@ import { router } from './routes';
 export default function App() {
   useEffect(() => {
     document.documentElement.lang = "es";
+    document.title = "PLATI";
   }, []);
 
   return <RouterProvider router={router} />;

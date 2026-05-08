@@ -7,7 +7,7 @@ export function Login() {
       <div className="text-center mb-10">
         <img src={logoImg} alt="PLATI Logo" className="h-16 w-16 mx-auto mb-6 rounded-2xl object-cover border-2 border-[#EDE7F6] shadow-sm" />
         <h1 className="text-3xl font-black text-[#311B92] mb-2">Iniciar sesión</h1>
-        <p className="text-gray-600">Ingresa a tu cuenta de PLATI.</p>
+        <p className="text-gray-600">Ingresa a tu cuenta de <span translate="no">PLATI</span>.</p>
       </div>
 
       <div className="bg-white p-8 rounded-3xl shadow-xl border border-[#EDE7F6]">
