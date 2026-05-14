@@ -25,6 +25,7 @@ export function Layout() {
           
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[#311B92]">
             <Link to="/" className="hover:text-[#F5A623] transition-colors">Inicio</Link>
+            <Link to="/beneficios" className="hover:text-[#F5A623] transition-colors">Beneficios</Link>
             <Link to="/simular" className="hover:text-[#F5A623] transition-colors">Simular</Link>
             <Link to="/medios-de-pago" className="hover:text-[#F5A623] transition-colors">Medios de Pagos</Link>
           </nav>
@@ -74,6 +75,7 @@ export function Layout() {
         <div className="flex-1 overflow-y-auto py-6 px-6 flex flex-col gap-6">
           <nav className="flex flex-col gap-4 text-base font-medium text-[#311B92]">
             <Link to="/" className="hover:text-[#F5A623] transition-colors py-2">Inicio</Link>
+            <Link to="/beneficios" className="hover:text-[#F5A623] transition-colors py-2">Beneficios</Link>
             <Link to="/simular" className="hover:text-[#F5A623] transition-colors py-2">Simular</Link>
             <Link to="/medios-de-pago" className="hover:text-[#F5A623] transition-colors py-2">Medios de Pagos</Link>
           </nav>
@@ -112,8 +114,8 @@ export function Layout() {
             <h4 className="font-bold text-[#311B92] mb-4">Producto</h4>
             <ul className="space-y-2 text-sm text-gray-600">
               <li><Link to="/simular" className="hover:text-[#7C4DFF]">Simulador de crédito</Link></li>
-              <li><Link to="/" className="hover:text-[#7C4DFF]">Beneficios</Link></li>
-              <li><Link to="/" className="hover:text-[#7C4DFF]">Requisitos</Link></li>
+              <li><Link to="/beneficios" className="hover:text-[#7C4DFF]">Beneficios</Link></li>
+              <li><Link to="/beneficios" className="hover:text-[#7C4DFF]">Requisitos</Link></li>
             </ul>
           </div>
           <div>

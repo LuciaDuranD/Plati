@@ -127,7 +127,7 @@ export function LandingPage() {
             <h2 className="text-3xl md:text-4xl font-black text-[#311B92] mb-4">¿Por qué elegir <span translate="no">PLATI</span>?</h2>
             <p className="text-lg text-gray-600">Diseñado específicamente para las necesidades de los microempresarios colombianos.</p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { icon: Zap, title: "Proceso 100% Digital", desc: "Olvídate de las sucursales. Completa tu solicitud desde tu celular en 5 minutos." },
@@ -142,6 +142,18 @@ export function LandingPage() {
                 <p className="text-gray-600 leading-relaxed">{benefit.desc}</p>
               </div>
             ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              to="/beneficios"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#6A1B9A] via-[#7C4DFF] to-[#AB47BC] text-white rounded-2xl font-bold text-lg hover:from-[#5E35B1] hover:via-[#6A1B9A] hover:to-[#9575FF] transition-all duration-300 shadow-xl shadow-[#7C4DFF]/40 hover:shadow-2xl hover:shadow-[#7C4DFF]/60 hover:scale-105 border border-[#9575FF]/30"
+            >
+              Ver todos los beneficios y requisitos
+              <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+              </svg>
+            </Link>
           </div>
         </section>
 
@@ -240,6 +252,7 @@ export function LandingPage() {
             </div>
           </div>
         </section>
+
       </main>
     </div>
   );

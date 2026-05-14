@@ -32,8 +32,11 @@ export function ClientLayout() {
       )}
 
       {/* Sidebar - Updated to match new design and mobile responsiveness */}
-      <aside className={`fixed inset-y-0 left-0 z-50 w-[240px] bg-[#311B92] flex flex-col shrink-0 transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 ${isMobileMenuOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full"}`}>
-        <div className="h-20 flex items-center justify-between px-6">
+      <aside className={`fixed inset-y-0 left-0 z-50 w-[240px] bg-gradient-to-br from-[#0D0524] via-[#1A0B4E] via-40% to-[#311B92] flex flex-col shrink-0 transform transition-transform duration-300 ease-in-out md:relative md:translate-x-0 relative overflow-hidden ${isMobileMenuOpen ? "translate-x-0 shadow-2xl" : "-translate-x-full"}`}>
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br from-[#7C4DFF] to-[#9575FF] rounded-full blur-[120px] opacity-50 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-gradient-to-tr from-[#5E35B1] to-[#7C4DFF] rounded-full blur-[120px] opacity-40 translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+        <div className="h-20 flex items-center justify-between px-6 relative z-10">
           <Link to="/" className="flex items-center gap-3">
             <div className="relative">
               <div className="h-8 w-8 rounded-full bg-[#7C4DFF] flex items-center justify-center border border-white/10 overflow-hidden">
@@ -51,7 +54,7 @@ export function ClientLayout() {
           </button>
         </div>
         
-        <div className="p-4 pt-6">
+        <div className="p-4 pt-6 relative z-10">
           <nav className="space-y-2">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path || (location.pathname === "/cliente/solicitar" && item.path === "/cliente");
@@ -60,15 +63,15 @@ export function ClientLayout() {
                   key={item.path}
                   to={item.path}
                   className={`relative flex items-center gap-3 px-4 h-12 rounded-xl text-sm font-bold transition-all ${
-                    isActive 
-                      ? "bg-[#7C4DFF] text-white" 
+                    isActive
+                      ? "bg-gradient-to-r from-[#6A1B9A] via-[#7C4DFF] to-[#AB47BC] text-white shadow-xl shadow-[#7C4DFF]/50 border border-[#9575FF]/30"
                       : "text-white/70 hover:bg-white/10 hover:text-white"
                   }`}
                 >
                   {isActive && (
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-[3px] bg-[#FFD600] rounded-r-full"></div>
+                    <div className="absolute left-0 top-1/2 -translate-y-1/2 h-8 w-1 bg-gradient-to-b from-[#F5A623] to-[#FF9800] rounded-r-full shadow-lg shadow-[#F5A623]/50"></div>
                   )}
-                  <item.icon className={`h-5 w-5 ${isActive ? "text-white" : "text-white/70"}`} />
+                  <item.icon className={`h-5 w-5 ${isActive ? "text-white drop-shadow-lg" : "text-white/70"}`} />
                   {item.name}
                 </Link>
               );
@@ -76,15 +79,15 @@ export function ClientLayout() {
           </nav>
         </div>
         
-        <div className="mt-auto p-4">
-          <div className="bg-white/5 rounded-xl p-3 flex items-center justify-between mb-4 border border-white/10">
+        <div className="mt-auto p-4 relative z-10">
+          <div className="bg-gradient-to-br from-white/10 via-white/5 to-transparent rounded-xl p-3 flex items-center justify-between mb-4 border border-white/20 backdrop-blur-sm shadow-lg">
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-full bg-[#7C4DFF] flex items-center justify-center text-white font-bold text-sm shrink-0">
+              <div className="h-10 w-10 rounded-full bg-gradient-to-br from-[#6A1B9A] via-[#7C4DFF] to-[#AB47BC] flex items-center justify-center text-white font-bold text-sm shrink-0 shadow-xl shadow-[#7C4DFF]/50 border-2 border-white/20">
                 CR
               </div>
               <div className="min-w-0">
-                <p className="text-sm font-bold text-white truncate">Carlos R.</p>
-                <p className="text-xs text-white/60 truncate">Miembro activo</p>
+                <p className="text-sm font-bold text-white truncate drop-shadow-lg">Carlos R.</p>
+                <p className="text-xs text-white/70 truncate">Miembro activo</p>
               </div>
             </div>
           </div>

@@ -21,20 +21,22 @@ export function ClientProfile() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left column: Avatar and basic info */}
         <div className="col-span-1">
-          <div className="bg-white rounded-2xl border border-[#EDE7F6] p-6 text-center shadow-sm">
+          <div className="bg-white rounded-2xl border border-[#EDE7F6] p-6 text-center shadow-lg">
             <div className="relative inline-block mb-4">
-              <div className="h-32 w-32 rounded-full bg-[#EDE7F6] border-4 border-white shadow-md flex items-center justify-center overflow-hidden">
-                <User className="h-16 w-16 text-[#7C4DFF]" />
+              <div className="h-32 w-32 rounded-full bg-gradient-to-br from-[#D1C4E9] via-[#EDE7F6] to-[#F8F5FF] border-4 border-white shadow-2xl flex items-center justify-center overflow-hidden relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#7C4DFF]/30 via-[#9575FF]/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-tl from-[#AB47BC]/20 to-transparent"></div>
+                <User className="h-16 w-16 text-[#6A1B9A] relative z-10 drop-shadow-lg" />
               </div>
-              <button className="absolute bottom-0 right-0 h-10 w-10 bg-[#F5A623] text-white rounded-full flex items-center justify-center border-4 border-white hover:bg-[#E09612] transition-colors shadow-sm">
+              <button className="absolute bottom-0 right-0 h-10 w-10 bg-gradient-to-br from-[#F5A623] via-[#FF9800] to-[#F57C00] text-white rounded-full flex items-center justify-center border-4 border-white hover:from-[#E09612] hover:to-[#EF6C00] transition-all shadow-xl shadow-[#F5A623]/50 hover:shadow-2xl hover:shadow-[#F5A623]/60">
                 <Camera className="h-4 w-4" />
               </button>
             </div>
-            
+
             <h2 className="text-xl font-bold text-[#311B92]">{user.name}</h2>
             <p className="text-sm text-gray-500 mb-6">C.C. {user.idNumber}</p>
-            
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#F8F5FF] text-[#7C4DFF] text-xs font-semibold rounded-full border border-[#EDE7F6]">
+
+            <div className="inline-flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-[#EDE7F6] via-[#D1C4E9] to-[#EDE7F6] text-[#6A1B9A] text-xs font-bold rounded-full border-2 border-[#D1C4E9] shadow-md">
               Miembro desde {user.joinDate}
             </div>
           </div>
@@ -45,7 +47,7 @@ export function ClientProfile() {
           <div className="bg-white rounded-2xl border border-[#EDE7F6] p-8 shadow-sm">
             <div className="flex justify-between items-center mb-6">
               <h3 className="text-lg font-bold text-[#311B92]">Información Personal</h3>
-              <button className="text-sm font-bold bg-[#F5A623] text-white px-4 py-2 rounded-lg hover:bg-[#E09612] transition-colors shadow-sm">
+              <button className="text-sm font-bold bg-gradient-to-r from-[#F5A623] via-[#FF9800] to-[#F57C00] text-white px-5 py-2.5 rounded-lg hover:from-[#E09612] hover:via-[#F57C00] hover:to-[#EF6C00] transition-all shadow-xl shadow-[#F5A623]/50 hover:shadow-2xl hover:shadow-[#F5A623]/60 border border-[#FF9800]/30">
                 Actualizar datos
               </button>
             </div>
@@ -53,8 +55,8 @@ export function ClientProfile() {
             <div className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex items-start gap-4">
-                  <div className="h-10 w-10 rounded-xl bg-[#F8F5FF] flex items-center justify-center shrink-0">
-                    <User className="h-5 w-5 text-[#7C4DFF]" />
+                  <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-[#D1C4E9] via-[#EDE7F6] to-[#F8F5FF] flex items-center justify-center shrink-0 shadow-md border border-[#D1C4E9]/50">
+                    <User className="h-5 w-5 text-[#6A1B9A]" />
                   </div>
                   <div>
                     <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Nombre Completo</p>
@@ -63,8 +65,8 @@ export function ClientProfile() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="h-10 w-10 rounded-xl bg-[#F8F5FF] flex items-center justify-center shrink-0">
-                    <Briefcase className="h-5 w-5 text-[#7C4DFF]" />
+                  <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-[#D1C4E9] via-[#EDE7F6] to-[#F8F5FF] flex items-center justify-center shrink-0 shadow-md border border-[#D1C4E9]/50">
+                    <Briefcase className="h-5 w-5 text-[#6A1B9A]" />
                   </div>
                   <div>
                     <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Ocupación</p>
@@ -77,8 +79,8 @@ export function ClientProfile() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="flex items-start gap-4">
-                  <div className="h-10 w-10 rounded-xl bg-[#F8F5FF] flex items-center justify-center shrink-0">
-                    <Mail className="h-5 w-5 text-[#7C4DFF]" />
+                  <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-[#D1C4E9] via-[#EDE7F6] to-[#F8F5FF] flex items-center justify-center shrink-0 shadow-md border border-[#D1C4E9]/50">
+                    <Mail className="h-5 w-5 text-[#6A1B9A]" />
                   </div>
                   <div>
                     <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Correo Electrónico</p>
@@ -87,8 +89,8 @@ export function ClientProfile() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="h-10 w-10 rounded-xl bg-[#F8F5FF] flex items-center justify-center shrink-0">
-                    <Phone className="h-5 w-5 text-[#7C4DFF]" />
+                  <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-[#D1C4E9] via-[#EDE7F6] to-[#F8F5FF] flex items-center justify-center shrink-0 shadow-md border border-[#D1C4E9]/50">
+                    <Phone className="h-5 w-5 text-[#6A1B9A]" />
                   </div>
                   <div>
                     <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Teléfono</p>
@@ -100,8 +102,8 @@ export function ClientProfile() {
               <hr className="border-[#EDE7F6]" />
 
               <div className="flex items-start gap-4">
-                <div className="h-10 w-10 rounded-xl bg-[#F8F5FF] flex items-center justify-center shrink-0">
-                  <MapPin className="h-5 w-5 text-[#7C4DFF]" />
+                <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-[#D1C4E9] via-[#EDE7F6] to-[#F8F5FF] flex items-center justify-center shrink-0 shadow-md border border-[#D1C4E9]/50">
+                  <MapPin className="h-5 w-5 text-[#6A1B9A]" />
                 </div>
                 <div>
                   <p className="text-xs font-medium text-gray-500 uppercase tracking-wide">Dirección de Residencia</p>

@@ -19,9 +19,11 @@ export function AdminLayout() {
   return (
     <div className="min-h-screen bg-[#F8F5FF] flex font-sans text-gray-900">
       {/* Sidebar */}
-      <aside className="w-64 bg-[#311B92] text-white hidden md:flex flex-col relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#7C4DFF] rounded-full blur-[80px] opacity-20 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-        <div className="h-20 flex items-center px-6 border-b border-white/10 relative z-10">
+      <aside className="w-64 bg-gradient-to-br from-[#0D0524] via-[#1A0B4E] via-40% to-[#311B92] text-white hidden md:flex flex-col relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br from-[#7C4DFF] to-[#9575FF] rounded-full blur-[120px] opacity-50 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-gradient-to-tr from-[#5E35B1] to-[#7C4DFF] rounded-full blur-[120px] opacity-40 translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
+        <div className="h-20 flex items-center px-6 border-b border-white/20 relative z-10">
           <div className="flex items-center gap-3">
             <img src={logoImg} alt="PLATI Logo" className="h-8 w-8 rounded-md object-cover border border-white/20" />
             <span className="text-xl font-black tracking-tight text-white" translate="no">PLAT<span className="text-[#F5A623]">I</span> Admin</span>
@@ -40,11 +42,11 @@ export function AdminLayout() {
                   to={item.path}
                   className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-bold transition-all ${
                     isActive
-                      ? "bg-[#7C4DFF] text-white shadow-lg shadow-[#7C4DFF]/20"
+                      ? "bg-gradient-to-r from-[#6A1B9A] via-[#7C4DFF] to-[#AB47BC] text-white shadow-xl shadow-[#7C4DFF]/50 border border-[#9575FF]/30"
                       : "text-white/60 hover:bg-white/10 hover:text-white"
                   }`}
                 >
-                  <item.icon className={`h-5 w-5 ${isActive ? "text-white" : "text-white/60"}`} />
+                  <item.icon className={`h-5 w-5 ${isActive ? "text-white drop-shadow-lg" : "text-white/60"}`} />
                   {item.name}
                 </Link>
               );
@@ -73,11 +75,13 @@ export function AdminLayout() {
 
       {/* Mobile Menu Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-64 bg-[#311B92] text-white z-50 transform transition-transform duration-300 md:hidden ${
+        className={`fixed top-0 left-0 h-full w-64 bg-gradient-to-br from-[#0D0524] via-[#1A0B4E] via-40% to-[#311B92] text-white z-50 transform transition-transform duration-300 md:hidden ${
           mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-[#7C4DFF] rounded-full blur-[80px] opacity-20 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-br from-[#7C4DFF] to-[#9575FF] rounded-full blur-[120px] opacity-50 -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-[350px] h-[350px] bg-gradient-to-tr from-[#5E35B1] to-[#7C4DFF] rounded-full blur-[120px] opacity-40 translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none"></div>
 
         <div className="h-20 flex items-center justify-between px-6 border-b border-white/10 relative z-10">
           <div className="flex items-center gap-3">
@@ -102,11 +106,11 @@ export function AdminLayout() {
                   onClick={closeMobileMenu}
                   className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-bold transition-all ${
                     isActive
-                      ? "bg-[#7C4DFF] text-white shadow-lg shadow-[#7C4DFF]/20"
+                      ? "bg-gradient-to-r from-[#6A1B9A] via-[#7C4DFF] to-[#AB47BC] text-white shadow-xl shadow-[#7C4DFF]/50 border border-[#9575FF]/30"
                       : "text-white/60 hover:bg-white/10 hover:text-white"
                   }`}
                 >
-                  <item.icon className={`h-5 w-5 ${isActive ? "text-white" : "text-white/60"}`} />
+                  <item.icon className={`h-5 w-5 ${isActive ? "text-white drop-shadow-lg" : "text-white/60"}`} />
                   {item.name}
                 </Link>
               );

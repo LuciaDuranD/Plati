@@ -1,5 +1,6 @@
 import { createBrowserRouter, Outlet, Link, useLocation } from "react-router";
 import { LandingPage } from "./screens/LandingPage";
+import { BenefitsDetail } from "./screens/BenefitsDetail";
 import { LoanSimulator } from "./screens/LoanSimulator";
 import { UserRegistration } from "./screens/UserRegistration";
 import { Login } from "./screens/Login";
@@ -27,6 +28,7 @@ export const router = createBrowserRouter([
     Component: Layout,
     children: [
       { index: true, Component: LandingPage },
+      { path: "beneficios", Component: BenefitsDetail },
       { path: "simular", Component: LoanSimulator },
       { path: "registro", Component: UserRegistration },
       { path: "ingresar", Component: Login },
