@@ -1,5 +1,5 @@
 import { Outlet, Link, useLocation } from "react-router";
-import { LayoutDashboard, Users, FileText, Settings, LogOut, Menu, AlertTriangle, X } from "lucide-react";
+import { LayoutDashboard, Users, FileText, Settings, LogOut, Menu, AlertTriangle, X, TrendingUp, Activity } from "lucide-react";
 import logoImg from "../../imports/Create_a_minimal_202604221958.jpeg";
 import { useState } from "react";
 
@@ -12,6 +12,8 @@ export function AdminLayout() {
     { name: "Solicitudes", path: "/admin/solicitudes", icon: FileText },
     { name: "Usuarios", path: "/admin/usuarios", icon: Users },
     { name: "Cartera Castigada", path: "/admin/cartera-castigada", icon: AlertTriangle },
+    { name: "Presupuesto y Control", path: "/admin/presupuesto-y-control", icon: TrendingUp },
+    { name: "Indicadores", path: "/admin/indicadores", icon: Activity },
   ];
 
   const closeMobileMenu = () => setMobileMenuOpen(false);

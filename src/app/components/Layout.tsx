@@ -23,24 +23,27 @@ export function Layout() {
             <span className="text-2xl font-black text-[#311B92] tracking-tight" translate="no">PLAT<span className="text-[#F5A623]">I</span></span>
           </Link>
           
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[#311B92]">
-            <Link to="/" className="hover:text-[#F5A623] transition-colors">Inicio</Link>
-            <Link to="/beneficios" className="hover:text-[#F5A623] transition-colors">Beneficios</Link>
-            <Link to="/simular" className="hover:text-[#F5A623] transition-colors">Simular</Link>
-            <Link to="/medios-de-pago" className="hover:text-[#F5A623] transition-colors">Medios de Pagos</Link>
+          <nav className="hidden lg:flex items-center gap-5 text-xs font-medium text-[#311B92]">
+            <Link to="/" className="hover:text-[#F5A623] transition-colors whitespace-nowrap">Inicio</Link>
+            <Link to="/sobre-nosotros" className="hover:text-[#F5A623] transition-colors whitespace-nowrap">Sobre Nosotros</Link>
+            <Link to="/terminos-y-condiciones" className="hover:text-[#F5A623] transition-colors whitespace-nowrap">Términos</Link>
+            <Link to="/politica-de-privacidad" className="hover:text-[#F5A623] transition-colors whitespace-nowrap">Privacidad</Link>
+            <Link to="/beneficios" className="hover:text-[#F5A623] transition-colors whitespace-nowrap">Beneficios</Link>
+            <Link to="/simular" className="hover:text-[#F5A623] transition-colors whitespace-nowrap">Simular</Link>
+            <Link to="/medios-de-pago" className="hover:text-[#F5A623] transition-colors whitespace-nowrap">Medios de Pago</Link>
           </nav>
           
-          <div className="hidden md:flex items-center gap-4">
-            <Link to="/ingresar" className="text-sm font-medium text-[#311B92] hover:text-[#F5A623] transition-colors">
+          <div className="hidden lg:flex items-center gap-3">
+            <Link to="/ingresar" className="text-xs font-medium text-[#311B92] hover:text-[#F5A623] transition-colors whitespace-nowrap">
               Iniciar sesión
             </Link>
-            <Link to="/registro" className="bg-[#7C4DFF] text-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-[#F5A623] transition-colors shadow-sm">
+            <Link to="/registro" className="bg-[#7C4DFF] text-white px-4 py-2 rounded-lg text-xs font-bold hover:bg-[#F5A623] transition-colors shadow-sm whitespace-nowrap">
               Crear cuenta
             </Link>
           </div>
-          
-          <button 
-            className="md:hidden p-2 text-[#311B92] hover:bg-gray-50 rounded-lg transition-colors"
+
+          <button
+            className="lg:hidden p-2 text-[#311B92] hover:bg-gray-50 rounded-lg transition-colors"
             onClick={() => setIsMobileMenuOpen(true)}
           >
             <Menu className="h-6 w-6" />
@@ -75,6 +78,9 @@ export function Layout() {
         <div className="flex-1 overflow-y-auto py-6 px-6 flex flex-col gap-6">
           <nav className="flex flex-col gap-4 text-base font-medium text-[#311B92]">
             <Link to="/" className="hover:text-[#F5A623] transition-colors py-2">Inicio</Link>
+            <Link to="/sobre-nosotros" className="hover:text-[#F5A623] transition-colors py-2">Sobre Nosotros</Link>
+            <Link to="/terminos-y-condiciones" className="hover:text-[#F5A623] transition-colors py-2">Términos y condiciones</Link>
+            <Link to="/politica-de-privacidad" className="hover:text-[#F5A623] transition-colors py-2">Política de privacidad</Link>
             <Link to="/beneficios" className="hover:text-[#F5A623] transition-colors py-2">Beneficios</Link>
             <Link to="/simular" className="hover:text-[#F5A623] transition-colors py-2">Simular</Link>
             <Link to="/medios-de-pago" className="hover:text-[#F5A623] transition-colors py-2">Medios de Pagos</Link>
@@ -121,7 +127,7 @@ export function Layout() {
           <div>
             <h4 className="font-bold text-[#311B92] mb-4">Compañía</h4>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><Link to="/" className="hover:text-[#7C4DFF]">Sobre nosotros</Link></li>
+              <li><Link to="/sobre-nosotros" className="hover:text-[#7C4DFF]">Sobre nosotros</Link></li>
               <li><Link to="/" className="hover:text-[#7C4DFF]">Contacto</Link></li>
               <li><Link to="/" className="hover:text-[#7C4DFF]">Preguntas frecuentes</Link></li>
             </ul>
@@ -129,8 +135,8 @@ export function Layout() {
           <div>
             <h4 className="font-bold text-[#311B92] mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><Link to="/" className="hover:text-[#7C4DFF]">Términos y condiciones</Link></li>
-              <li><Link to="/" className="hover:text-[#7C4DFF]">Política de privacidad</Link></li>
+              <li><Link to="/terminos-y-condiciones" className="hover:text-[#7C4DFF]">Términos y condiciones</Link></li>
+              <li><Link to="/politica-de-privacidad" className="hover:text-[#7C4DFF]">Política de privacidad</Link></li>
             </ul>
           </div>
         </div>

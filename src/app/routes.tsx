@@ -15,9 +15,14 @@ import { AdminNewUser } from "./screens/AdminNewUser";
 import { AdminUserProfile } from "./screens/AdminUserProfile";
 import { ChargedOffPortfolio } from "./screens/ChargedOffPortfolio";
 import { FinancialReports } from "./screens/FinancialReports";
+import { BudgetControl } from "./screens/BudgetControl";
+import { Indicators } from "./screens/Indicators";
 import { PaymentScreen } from "./screens/PaymentScreen";
 import { PublicPaymentMethods } from "./screens/PublicPaymentMethods";
 import { ClientProfile } from "./screens/ClientProfile";
+import { AboutUs } from "./screens/AboutUs";
+import { TermsAndConditions } from "./screens/TermsAndConditions";
+import { PrivacyPolicy } from "./screens/PrivacyPolicy";
 import { Layout } from "./components/Layout";
 import { AdminLayout } from "./components/AdminLayout";
 import { ClientLayout } from "./components/ClientLayout";
@@ -33,6 +38,9 @@ export const router = createBrowserRouter([
       { path: "registro", Component: UserRegistration },
       { path: "ingresar", Component: Login },
       { path: "medios-de-pago", Component: PublicPaymentMethods },
+      { path: "sobre-nosotros", Component: AboutUs },
+      { path: "terminos-y-condiciones", Component: TermsAndConditions },
+      { path: "politica-de-privacidad", Component: PrivacyPolicy },
     ],
   },
   {
@@ -58,6 +66,8 @@ export const router = createBrowserRouter([
       { path: "usuarios/:userId", Component: AdminUserProfile },
       { path: "cartera-castigada", Component: ChargedOffPortfolio },
       { path: "reportes-financieros", Component: FinancialReports },
+      { path: "presupuesto-y-control", Component: BudgetControl },
+      { path: "indicadores", Component: Indicators },
     ],
   }
 ]);
